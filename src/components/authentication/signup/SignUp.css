@@ -1,0 +1,14 @@
+.left-side {
+    background-color: rgba(238, 255, 47, 0.6);
+    padding: 3em;
+    font-weight: bold;
+}
+
+.right-side {
+    background: rgba(94, 255, 137, 0.6);
+    padding: 3em;
+    font-weight: bold;
+}
+.btn{
+    font-weight: bold;
+}

@@ -4,7 +4,10 @@ body {
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
     sans-serif;
   -webkit-font-smoothing: antialiased;
+  background-image: url('./images/roadway.jpg');
   -moz-osx-font-smoothing: grayscale;
+  background-size: cover;
+  background-repeat: no-repeat;
 }
 
 code {
