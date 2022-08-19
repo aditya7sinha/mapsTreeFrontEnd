@@ -1,17 +1,19 @@
 import React from 'react'
 import { Formik, Field, Form } from 'formik';
 import { Button } from 'react-bootstrap';
+import mainimg from '../main.png'
 import './SignUp.css';
 
 function SignUp() {
   return (
     <>
-    <div class="container-fluid bg-*">
+    <div class="container-fluid mt-2">
   <div class="row justify-content-center">
-    <div class="left-side col-4">
+    <div class="left-side2 col-4">
     <p class="h2">Join us today!! Create, Meet like minded people, support </p>
+    <img src={mainimg} width="340" height="340" />
     </div>
-    <div class="right-side col-4">
+    <div class="right-side2 col-4">
     <Formik
       initialValues={{
         userName: '',
@@ -20,7 +22,8 @@ function SignUp() {
         phoneNumber: '',
         latitude: '',
         longitude: '',
-        country: ''
+        country: '',
+        email: ''
           }}
       onSubmit={async (values) => {
         await new Promise((r) => setTimeout(r, 500));
@@ -33,11 +36,12 @@ function SignUp() {
        console.log(values.phoneNumber)
        console.log(values.latitude)
        console.log(values.longitude)
+       console.log(values.email)
       }}
     >
       <Form>
         <div class="row">
-        <p class="h2">Join Today and be part of our community</p>
+        <p class="h2 font-color-red">Join Today and be part of our community</p>
         </div>
       <div class="row form-group mt-3">
         <label htmlFor="userName" class="col-sm">UserName</label>
@@ -51,6 +55,10 @@ function SignUp() {
           type="password" class="col form-control"
         />
          </div>
+         <div class="row form-group mt-3">
+        <label htmlFor="email" class="col-sm">Email</label>
+        <Field id="email" name="email" placeholder="Jane@gmail.com" class="col form-control"/>
+        </div>
          <div class="row form-group mt-3" >
         <label htmlFor="age" class="col-sm col-form-label">Age</label>
         <Field
@@ -100,8 +108,8 @@ function SignUp() {
         />
          </div>
          <div class="form-group mt-3  d-flex justify-content-end">
-        <Button type="reset" class="btn btn-secondary">Cancel</Button>
-        <Button type="signup" class="btn btn-info">SignUp</Button>
+        <button type="reset" class="btn btn-secondary">Cancel</button>
+        <button type="signup" class="btn btn-success">SignUp</button>
         </div>
       </Form>
     </Formik>

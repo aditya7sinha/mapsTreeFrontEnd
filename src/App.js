@@ -19,7 +19,7 @@ function App() {
     <Navbar></Navbar>
     <BrowserRouter>
      <Routes>
-        <Route path="/" element={<Dashboard />} />
+        <Route path="/" element={<Overview />} />
         <Route path="profile" element={<Profile />} />
         <Route path="aboutus" element={<Aboutus />} />
         <Route path="login" element={<Login />} />
@@ -28,7 +28,7 @@ function App() {
         <Route path="friends" element={<Friend />} />
         <Route path="features" element={<Features />} />
         <Route path="faq" element={<Faq />} />
-        <Route path="overview" element={<Overview />} />
+        <Route path="dashboard" element={<Dashboard />} />
     </Routes>
     </BrowserRouter>
     </div>

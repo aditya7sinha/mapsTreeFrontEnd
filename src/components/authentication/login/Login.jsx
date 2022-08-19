@@ -2,13 +2,14 @@ import React from 'react'
 import './Login.css'
 import { Formik, Field, Form } from 'formik';
 import { Button } from 'react-bootstrap';
-
+import mainimg from '../main.png'
 function Login() {
   return (
-    <div class="container-fluid bg-*">
+    <div class="container-fluid bg-* mt-5">
     <div class="row justify-content-center">
       <div class="left-side col-5">
       <p class="h2">Bring the change</p>
+      <img src={mainimg} width="340" height="340" />
       </div>
       <div class="right-side col-5">
       <Formik
@@ -41,9 +42,9 @@ function Login() {
           />
           </div>
            <div class="form-group mt-3  d-flex justify-content-end">
-          <Button type="reset" class="btn btn-warning">Reset</Button>
-          <Button type="submit" class="btn btn-dark">Login</Button>
-          <Button type="signup" class="btn btn-light">SignUp</Button>
+          <button type="reset" class="btn btn-warning">Reset</button>
+          <button type="submit" class="btn btn-dark">Login</button>
+          <button type="signup" class="btn btn-light">SignUp</button>
           </div>
         </Form>
       </Formik>
