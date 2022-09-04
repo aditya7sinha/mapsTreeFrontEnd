@@ -3,7 +3,13 @@ import './Login.css'
 import { Formik, Field, Form } from 'formik';
 import { Button } from 'react-bootstrap';
 import mainimg from '../main.png'
+import axios from 'axios';
+
+ const api = axios.create({
+  baseURL: "http://localhost:8081/user/login"
+ })
 function Login() {
+  
   return (
     <div class="container-fluid bg-* mt-5">
     <div class="row justify-content-center">
@@ -18,11 +24,13 @@ function Login() {
           password: '' 
             }}
         onSubmit={async (values) => {
-          await new Promise((r) => setTimeout(r, 500));
-          alert(JSON.stringify(values, null, 2));
+          // await new Promise((r) => setTimeout(r, 500));
+          let response = api.post("/", {values})
+          console.log(response);
+          // alert(JSON.stringify(values, null, 2));
           console.log(JSON.stringify(values))
-         console.log(values.userName)
-         console.log(values.password)
+          console.log(values.userName)
+          console.log(values.password)
          }}
       >
         <Form>

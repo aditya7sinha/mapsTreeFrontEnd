@@ -3,9 +3,14 @@ import { Formik, Field, Form } from 'formik';
 import { Button } from 'react-bootstrap';
 import mainimg from '../main.png'
 import './SignUp.css';
+import axios from 'axios';
+
+const api= axios.create({
+  baseURL: `http://localhost:8081/user/register`})
 
 function SignUp() {
-  return (
+
+    return (
     <>
     <div class="container-fluid mt-2">
   <div class="row justify-content-center">
@@ -25,10 +30,11 @@ function SignUp() {
         country: '',
         email: ''
           }}
-      onSubmit={async (values) => {
+      onSubmit= { async (values) => {
         await new Promise((r) => setTimeout(r, 500));
-        // alert(JSON.stringify(values, null, 2));
-        console.log(JSON.stringify(values))
+        let response = await axios.post("/",{ values })
+       console.log(response)
+       console.log(JSON.stringify(values))
        console.log(values.userName)
        console.log(values.password)
        console.log(values.age)

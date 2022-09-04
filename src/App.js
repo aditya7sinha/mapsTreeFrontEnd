@@ -12,6 +12,7 @@ import Friend from './components/friend/Friend';
 import Features from './components/features/Features';
 import Faq from './components/faq/Faq';
 import Overview from './components/dashboardstart/Overview';
+import { Footer } from './components/footer/Footer';
 
 function App() {
   return (
@@ -29,8 +30,10 @@ function App() {
         <Route path="features" element={<Features />} />
         <Route path="faq" element={<Faq />} />
         <Route path="dashboard" element={<Dashboard />} />
+        <Route path="overview" element={<Overview />} />
     </Routes>
     </BrowserRouter>
+    <Footer></Footer>
     </div>
   );
 }
